@@ -11,6 +11,12 @@ def hash_with_sha256(str):
 def h(position,password,initial,maxVal,salt,hashed):
     password = initial
     #2 FOR LOOPS, THE OUTERMOST KEEPS TRACK OF THE USER, THE INNER LOOP USES BRUTEFORCE TO DECODE
+    '''
+    Some of this is hard to understand with the sparse commenting.  To my understanding, the for 
+    loops are necessary to avoid the load of recursing through passwords with longer lengths that 
+    make the combinations increase to the power of character possibilities per digit. Recursion is 
+    here tho.
+    '''
     for j in range (100,0,-1):
         for i in range(0, maxVal+1):
             if i == maxVal:
